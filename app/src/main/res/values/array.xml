@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="refresh_colors">
+        <item>@android:color/black</item>
+        <item>@android:color/darker_gray</item>
+        <item>@android:color/black</item>
+        <item>@android:color/darker_gray</item>
+    </array>
+</resources>

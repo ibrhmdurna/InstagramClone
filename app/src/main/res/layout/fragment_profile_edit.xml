@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Profile.ProfileEditFragment"
+    android:background="@android:color/white">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/edit_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorInstagramGray"
+        android:elevation="1dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/edit_close_button"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_close_icon"
+                android:padding="13dp"
+                android:foreground="?android:attr/selectableItemBackground"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/edit_profile"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+
+            <ProgressBar
+                android:id="@+id/edit_progress_bar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:visibility="gone"/>
+
+            <ImageView
+                android:id="@+id/edit_done_button"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_done_icon"
+                android:padding="13dp"
+                android:layout_alignParentEnd="true"
+                android:foreground="?android:attr/selectableItemBackground"/>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/edit_toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/edit_profile_image"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_default_profile_background"
+                app:civ_border_color="@color/colorGray"
+                app:civ_border_width="1dp"
+                android:layout_marginTop="10dp"
+                android:saveEnabled="false"/>
+
+            <TextView
+                android:id="@+id/change_photo_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/change_photo"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"
+                android:textSize="16sp"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:textColor="@android:color/darker_gray"/>
+
+            <com.vanniktech.emoji.EmojiEditText
+                android:id="@+id/edit_name_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:backgroundTint="@color/selector_focused_color"
+                android:hint="@string/name"
+                android:saveEnabled="false"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/username"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:textColor="@android:color/darker_gray"/>
+
+            <EditText
+                android:id="@+id/edit_username_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:backgroundTint="@color/selector_focused_color"
+                android:hint="@string/username"
+                android:saveEnabled="false"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/website"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:textColor="@android:color/darker_gray" />
+
+            <EditText
+                android:id="@+id/edit_website_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:backgroundTint="@color/selector_focused_color"
+                android:hint="@string/website"
+                android:saveEnabled="false"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bio"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:textColor="@android:color/darker_gray"/>
+
+            <com.vanniktech.emoji.EmojiTextView
+                android:id="@+id/edit_bio_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:backgroundTint="@color/selector_focused_color"
+                android:hint="@string/bio"
+                android:theme="@style/Widget.AppCompat.EditText"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:textIsSelectable="false"/>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login.UserInformationFragment"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_and_password"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:layout_gravity="center"/>
+
+        <EditText
+            android:id="@+id/user_full_name_input"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="@string/full_name"
+            android:background="@drawable/custom_edit_default_style"
+            android:padding="15dp"
+            android:textSize="14sp"
+            android:layout_marginTop="25dp"
+            android:inputType="text"/>
+
+        <EditText
+            android:id="@+id/user_password_input"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="@string/password"
+            android:background="@drawable/custom_edit_default_style"
+            android:padding="15dp"
+            android:textSize="14sp"
+            android:layout_marginTop="20dp"
+            android:inputType="textPassword"/>
+
+        <TextView
+            android:id="@+id/password_error_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="@string/this_is_a_common_password_try_something_that_s_harder_to_guess"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/holo_red_light"
+            android:visibility="gone"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/your_contacts_are_periodically_synced_and_stored_on_our_servers_to_remove_contacts_go_to_settings_and_disconnect"
+            android:textColor="@color/colorDarkGray"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/info_next_btn"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/custom_login_button_style"
+            android:elevation="0dp"
+            android:enabled="false"
+            android:layout_marginTop="25dp"
+            android:foreground="@android:color/transparent"
+            android:text="@string/next"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@color/selector_login_btn_text_color" />
+    </LinearLayout>
+</RelativeLayout>

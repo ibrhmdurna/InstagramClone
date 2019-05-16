@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Local.PostActivity"
+    android:background="@android:color/white">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/post_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorInstagramGray"
+        android:elevation="1dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/post_back_button"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_back_icon"
+                android:padding="18dp"
+                android:foreground="?android:attr/selectableItemBackground"/>
+
+            <TextView
+                android:id="@+id/post_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/post"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/post_toolbar"
+        android:layout_above="@id/postBottomNavigationView"
+        android:overScrollMode="ifContentScrolls">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/post_user_layout_f"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/post_profile_image_f"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"/>
+
+                <TextView
+                    android:id="@+id/post_user_name_f"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/user_name"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    android:layout_marginStart="10dp"/>
+
+                <ImageView
+                    android:id="@+id/post_more_options_view_f"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:src="@drawable/ic_post_more_options"
+                    android:layout_gravity="center|end"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.universalvideoview.UniversalVideoView
+                    android:id="@+id/post_video_view_f"
+                    android:layout_width="match_parent"
+                    android:layout_height="360dp"
+                    app:uvv_autoRotation="true"
+                    app:uvv_fitXY="true">
+                </com.universalvideoview.UniversalVideoView>
+
+                <com.example.ibrhm.instagramclone.VideoRecyclerView.view.CameraAnimation
+                    android:id="@+id/cameraAnimation_f"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/fram_camera"
+                    android:visibility="gone"/>
+
+                <com.example.ibrhm.instagramclone.Utils.GridImageView
+                    android:id="@+id/post_image_view_f"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:minHeight="360dp"
+                    android:maxHeight="450dp"
+                    android:background="@android:color/black"/>
+
+                <com.github.kshitij_jain.instalike.InstaLikeView
+                    android:id="@+id/like_view_f"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:alpha="0.8"
+                    app:likeColor="@android:color/white"
+                    app:likeSize="80dp"
+                    app:likeSrc="@drawable/img_heart"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="15dp">
+
+                <ImageView
+                    android:id="@+id/post_like_view_f"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/ufi_heart"/>
+
+                <ImageView
+                    android:id="@+id/post_comment_view_f"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ufi_comment"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"/>
+
+                <ImageView
+                    android:id="@+id/post_share_view_f"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ufi_direct_share_bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="15dp">
+
+                <TextView
+                    android:id="@+id/post_like_count_f"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"/>
+
+                <com.hendraanggrian.widget.SocialTextView
+                    android:id="@+id/post_caption_f"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:inputType="textMultiLine"
+                    tools:ignore="TextViewEdits"
+                    android:layout_marginTop="2dp"
+                    app:hashtagColor="@color/colorBlackBlue"
+                    app:mentionColor="@color/colorBlackBlue"/>
+
+                <TextView
+                    android:id="@+id/post_comment_count_f"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/colorDarkGray"/>
+
+                <TextView
+                    android:id="@+id/post_time_f"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="@color/colorGray"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/postBottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorInstagramGray"
+        app:itemIconSize="22dp"
+        app:itemIconTint="@android:color/black"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_menu"
+        android:theme="@style/CustomBottomNavigationView">
+    </android.support.design.widget.BottomNavigationView>
+
+</RelativeLayout>

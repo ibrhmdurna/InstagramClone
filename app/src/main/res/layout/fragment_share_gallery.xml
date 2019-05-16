@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Share.ShareGalleryFragment"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:id="@+id/share_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="360dp">
+
+        <com.naver.android.helloyako.imagecrop.view.ImageCropView
+            android:id="@+id/share_crop_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:setInnerGridMode="on"
+            app:gridInnerStroke="1dp"
+            app:gridInnerColor="#66ffffff"
+            app:setOuterGridMode="on"
+            app:gridOuterStroke="1dp"
+            app:gridOuterColor="#ffffff"
+            android:visibility="gone"/>
+
+        <com.universalvideoview.UniversalVideoView
+            android:id="@+id/share_video_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:uvv_fitXY="true"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/gallery_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/share_image_view"
+        android:layout_marginTop="1dp">
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

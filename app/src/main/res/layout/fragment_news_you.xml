@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".News.NewsYouFragment">
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/news_you_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:refreshColors="@array/refresh_colors"
+        app:refreshType="water_drop">
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/news_you_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/follow_req_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:visibility="gone"
+                    android:focusable="true">
+
+                    <RelativeLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/follow_req_last_profile"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:src="@drawable/ic_default_profile_background"
+                            android:layout_centerInParent="true"/>
+
+                        <TextView
+                            android:id="@+id/follow_req_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="40"
+                            android:textStyle="bold"
+                            android:background="@drawable/ic_circle_maroon"
+                            android:textColor="@android:color/white"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:textSize="12sp"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="15dp"
+                        android:layout_gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/follow_requests"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/approve_or_ignore_requests"
+                            android:textColor="@android:color/black"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/follow_not_req_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:visibility="gone"
+                    android:focusable="true">
+
+                    <RelativeLayout
+                        android:layout_width="50dp"
+                        android:layout_height="50dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:civ_border_width="2dp"
+                            app:civ_border_color="@android:color/black"
+                            android:src="@android:color/transparent"/>
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_discover_people_icon"
+                            android:layout_centerInParent="true"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="15dp"
+                        android:layout_gravity="center">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/follow_requests"
+                            android:textColor="@android:color/black"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/approve_or_ignore_requests"
+                            android:textColor="@android:color/black"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/follow_interactions_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/follow_interactions"
+                        android:textColor="@android:color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:paddingTop="15dp"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="15dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/follow_interactions_content_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="15dp"
+                        android:foreground="?android:attr/selectableItemBackground">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/f_interaction_one_profile"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:src="@drawable/ic_default_profile_background"
+                            app:civ_border_width="1dp"
+                            app:civ_border_color="@color/colorDarkGray"/>
+
+                        <RelativeLayout
+                            android:id="@+id/f_interaction_two_profile"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_weight="0"
+                            android:visibility="gone">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/f_interaction_2th_photo"
+                                android:layout_width="37dp"
+                                android:layout_height="37dp"
+                                app:civ_border_color="@color/colorDarkGray"
+                                app:civ_border_width="1dp"/>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_alignParentBottom="true">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:layout_width="38dp"
+                                    android:layout_height="38dp"
+                                    android:src="@android:color/white"/>
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:id="@+id/f_interaction_1st_photo"
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    app:civ_border_color="@color/colorDarkGray"
+                                    app:civ_border_width="1dp"
+                                    android:layout_centerInParent="true"/>
+                            </RelativeLayout>
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/f_interaction_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="17dp"
+                            android:textColor="@android:color/black"
+                            android:paddingEnd="40dp"
+                            tools:ignore="RtlSymmetry" />
+
+                        <TextView
+                            android:id="@+id/f_interaction_follow_view"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:text="@string/follow"
+                            android:background="@drawable/custom_login_button_style"
+                            android:textColor="@android:color/white"
+                            android:padding="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/f_interaction_following_view"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:text="@string/following_extra"
+                            android:background="@drawable/custom_edit_default_style"
+                            android:textColor="@android:color/black"
+                            android:padding="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:visibility="gone"/>
+
+                        <TextView
+                            android:id="@+id/f_interaction_req_view"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:text="@string/requested"
+                            android:background="@drawable/custom_edit_default_style"
+                            android:textColor="@android:color/black"
+                            android:padding="5dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:visibility="gone"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/interaction_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:focusableInTouchMode="false"
+                    android:descendantFocusability="blocksDescendants">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/interactions"
+                        android:padding="15dp"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold"/>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/news_interaction_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:nestedScrollingEnabled="false"
+                        android:scrollbars="none"
+                        android:focusable="false">
+                    </android.support.v7.widget.RecyclerView>
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </com.baoyz.widget.PullRefreshLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/news_you_loading_anim"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        app:lottie_autoPlay="false"
+        app:lottie_fileName="loading.json"
+        app:lottie_loop="true"/>
+</RelativeLayout>

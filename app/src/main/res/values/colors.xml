@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#3997f0</color>
+    <color name="colorLightAccent">#80b6e8</color>
+    <color name="colorExtraLightAccent">#80c3ff</color>
+    <color name="colorInstagramGray">#FAFAFA</color>
+    <color name="colorGray">#bebebe</color>
+    <color name="colorLightGray">#E0E0E0</color>
+    <color name="colorExtraLightGray">#ededed</color>
+    <color name="colorSpecialLightGray">#c8c8c8</color>
+    <color name="colorDarkGray">#8c8c8c</color>
+    <color name="colorLightBlack">#646464</color>
+    <color name="colorGreen">#51b545</color>
+    <color name="colorBlackBlue">#163654</color>
+    <color name="colorWhiteTint">#b4ffffff</color>
+    <color name="colorCommentTypingColor">#8cb5d9f7</color>
+    <color name="colorMaroon">#ED4856</color>
+    <color name="colorGreenPastel">#42595e</color>
+</resources>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Share.ShareVideoFragment"
+    android:background="@android:color/white">
+
+    <RelativeLayout
+        android:id="@+id/share_video_container"
+        android:layout_width="match_parent"
+        android:layout_height="360dp">
+
+        <com.otaliastudios.cameraview.CameraView
+            android:id="@+id/share_video_view"
+            android:keepScreenOn="true"
+            android:layout_width="match_parent"
+            app:cameraSessionType="video"
+            app:cameraVideoQuality="max720p"
+            app:cameraVideoMaxDuration="60000"
+            android:layout_height="360dp"/>
+
+        <ImageView
+            android:id="@+id/video_rotate_view"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_rotate_icon"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="17dp"/>
+
+        <ImageView
+            android:id="@+id/video_flash_view"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/selector_flash_view"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="17dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/video_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/share_video_container"
+        android:layout_marginTop="1dp">
+
+        <RelativeLayout
+            android:id="@+id/video_take_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_take_circle_medium"
+                android:layout_centerInParent="true"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_take_circle_small"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

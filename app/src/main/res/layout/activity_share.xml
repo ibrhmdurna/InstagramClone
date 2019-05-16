@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/share_toolbar"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        app:contentInsetStart="0dp"
+        android:background="@color/colorInstagramGray"
+        android:elevation="1dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/share_close_button"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_close_icon"
+                    android:padding="13dp"
+                    android:foreground="?android:attr/selectableItemBackground"/>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <Spinner
+                        android:id="@+id/share_toolbar_spinner"
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:visibility="visible">
+                    </Spinner>
+
+                    <TextView
+                        android:id="@+id/share_toolbar_photo_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/photo_small"
+                        android:gravity="center"
+                        android:textColor="@android:color/black"
+                        android:visibility="invisible"
+                        android:textSize="16sp"
+                        android:layout_marginStart="10dp"/>
+
+                    <TextView
+                        android:id="@+id/share_toolbar_video_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="@string/video_small"
+                        android:gravity="center"
+                        android:textColor="@android:color/black"
+                        android:visibility="invisible"
+                        android:textSize="16sp"
+                        android:layout_marginStart="10dp"/>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/share_toolbar_next_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/next"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/colorAccent"
+                android:background="@android:color/transparent"
+                android:textSize="17sp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"/>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/share_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/share_toolbar"
+        android:layout_above="@id/share_tab_layout">
+
+    </android.support.v4.view.ViewPager>
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/share_tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:layout_alignParentBottom="true"
+        app:tabTextColor="@color/selector_tab_focused_color"
+        android:theme="@style/DialogStyle"
+        app:tabRippleColor="@android:color/transparent">
+    </android.support.design.widget.TabLayout>
+</RelativeLayout>

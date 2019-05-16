@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.ibrhm.instagramclone">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:name=".VideoRecyclerView.view.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning,InnerclassSeparator">
+        <activity
+            android:name=".Home.HomeActivity"
+            android:theme="@style/CustomHomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Profile.ProfileActivity"
+            android:theme="@style/CustomHomeActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".News.NewsActivity"
+            android:theme="@style/CustomHomeActivity">
+            <intent-filter>
+                <action android:name=".NewsActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Search.SearchActivity"
+            android:theme="@style/CustomHomeActivity" />
+        <activity
+            android:name=".Share.ShareActivity"
+            android:theme="@style/CustomWhiteNavigationActivity" />
+        <activity
+            android:name=".Login.LoginActivity"
+            android:theme="@style/CustomLightActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".Login.RegisterActivity"
+            android:theme="@style/CustomLightActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".Share.ShareToActivity"
+            android:theme="@style/CustomWhiteNavigationActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".Local.CommentActivity"
+            android:theme="@style/CustomWhiteNavigationActivity" />
+        <activity
+            android:name=".Local.LikeActivity"
+            android:theme="@style/CustomHomeActivity" />
+        <activity
+            android:name=".Search.AlgoliaSearchActivity"
+            android:theme="@style/CustomHomeActivity"
+            android:windowSoftInputMode="adjustPan|stateVisible" />
+        <activity
+            android:name=".Local.UserProfileActivity"
+            android:theme="@style/CustomHomeActivity">
+            <intent-filter>
+                <action android:name=".UserProfileActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Home.ChatActivity"
+            android:theme="@style/CustomWhiteNavigationActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+            <intent-filter>
+                <action android:name=".ChatActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Home.DirectSearchActivity"
+            android:theme="@style/CustomWhiteNavigationActivity" />
+        <activity
+            android:name=".Local.PostActivity"
+            android:theme="@style/CustomHomeActivity" />
+        <activity
+            android:name=".News.CommentsInteractionActivity"
+            android:theme="@style/CustomWhiteNavigationActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize"/>
+        <activity android:name=".News.LikesInteractionActivity"
+            android:theme="@style/CustomHomeActivity"/>
+
+        <service android:name=".Services.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notification_icon" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorPrimary" />
+    </application>
+
+</manifest>

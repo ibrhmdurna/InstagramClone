@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login.PhoneValidationFragment"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/sent_sms_confirm_success"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sms_confirmation_sent"
+            android:textSize="15sp"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:background="@color/colorGreen"
+            android:textColor="@android:color/white"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_confirmation_code"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:textSize="14sp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/confirmation_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:textAlignment="center"/>
+
+            <EditText
+                android:id="@+id/code_input"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:hint="@string/confirmation_code"
+                android:background="@drawable/custom_edit_default_style"
+                android:drawablePadding="10dp"
+                android:padding="15dp"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"
+                android:maxLength="6"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/code_error_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/that_code_isn_t_valid_you_can_request_a_new_one"
+                android:textColor="@android:color/holo_red_light"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:id="@+id/confirm_phone_next_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_login_button_style"
+                    android:elevation="0dp"
+                    android:enabled="false"
+                    android:foreground="@android:color/transparent"
+                    android:text="@string/next"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                    android:textColor="@color/selector_login_btn_text_color" />
+
+                <ProgressBar
+                    android:id="@+id/code_progress_bar"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
